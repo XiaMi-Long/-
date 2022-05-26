@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'consolas';
+  src: url('@/assets/font/consola.ttf');
+}
+
+*{
+  font-family: 'consolas', 'Courier New', Courier, monospace;
+}

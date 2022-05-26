@@ -1,9 +1,13 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: wwy
+ * @Date: 2022-05-06 09:29:53
+ * @LastEditors: wwy
+ * @LastEditTime: 2022-05-26 17:09:47
+-->
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
     <router-view />
   </div>
 </template>
@@ -15,18 +19,33 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
 }
 
-nav {
-  padding: 30px;
+* {
+  /*里面的代码可以根据自己需求去进行更改*/
+  /* 设置滚动条的样式 */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* 滚动槽 */
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ff6f91;
+  }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  ::-webkit-scrollbar-track-piece {
+    border-radius: 30px;
+    background-color: #b0a8b9;
   }
 }
 </style>
