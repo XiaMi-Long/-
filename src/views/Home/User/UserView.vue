@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 15:51:18
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 17:43:24
+ * @LastEditTime: 2022-06-01 14:46:46
 -->
 <template>
   <div class="user_container">
@@ -174,10 +174,14 @@ export default {
     },
 
     /* 处理左边的歌单 */
-    handleLeftSongSheetClick() {},
+    handleLeftSongSheetClick() {
+      this.$store.commit("setSongType", "A");
+    },
 
     /* 处理右边的歌单 */
-    handleRightSongSheetClick() {},
+    handleRightSongSheetClick() {
+      this.$store.commit("setSongType", "B");
+    },
 
     /* 左边弹窗关闭回调 */
     MobileLeftDialogClose() {

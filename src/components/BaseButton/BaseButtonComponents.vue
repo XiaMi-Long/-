@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 16:59:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-25 18:16:47
+ * @LastEditTime: 2022-06-01 15:54:32
 -->
 <template>
   <div class="base-button" @click="btnClick($event)">
@@ -13,11 +13,16 @@
 </template>
 
 <script>
+import { songType } from "@/config/type";
+
 export default {
   name: "BaseButtonComponents",
   methods: {
     btnClick(event) {
-      this.$emit("base-button-click", event.target.innerText);
+      this.$emit(
+        "base-button-click",
+        songType.filter((item) => item.name === event.target.innerText)
+      );
 
       if (event.path[0].nodeName.toLocaleLowerCase() === "span") {
         event.path[1].classList.add("base-button-click-focus");

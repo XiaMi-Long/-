@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:35:36
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 17:37:19
+ * @LastEditTime: 2022-06-01 14:30:32
  */
 export const User = {
   A: {
@@ -21,6 +21,7 @@ export const User = {
       "自幼缺失本族人独有的沟通能力「念话」，因而除了族长和努力学习了魔神语的父母能与她沟通之外无人能和洛琪希沟通，感觉自己在村里被孤立了感到孤独，在见识到了魔术的魅力后毅然离家踏上旅程。后就读于拉诺亚魔法大学并师从吉纳斯",
     ],
     bilibiliUrl: "https://space.bilibili.com/639343375?spm_id_from=333.337.0.0",
+    hasType: ["A", "B", "C", "E"],
   },
   B: {
     userName: "❤",
@@ -37,5 +38,6 @@ export const User = {
       "隐约雷鸣，阴霾天空，即使天无雨，吾亦留在此",
     ],
     bilibiliUrl: "https://account.bilibili.com/account/home",
+    hasType: ["B", "C", "D"],
   },
 };

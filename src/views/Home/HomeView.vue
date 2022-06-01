@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 15:47:07
+ * @LastEditTime: 2022-06-01 16:13:11
 -->
 <!--
  * @Descripttion: 
@@ -24,18 +24,22 @@
         </main>
         <!-- 分类和搜索框 -->
         <div class="classification">
-          <SongClassifyView></SongClassifyView>
+          <SongClassifyView
+            @change-song-type="handleChangeSongType"
+            @change-input-search="handleInputSearch"
+            @change-song-sheet="handleChangeSongSheet"
+          ></SongClassifyView>
         </div>
         <!-- 表格 -->
         <div class="table">
-          <TableView></TableView>
+          <TableView :filterSong="getFilterSong"></TableView>
         </div>
       </header>
     </div>
     <!-- 切换用户 -->
     <ChangeUserView
       v-if="getRole !== 'All'"
-      @change-user="ChnageUserCallBack"
+      @change-user="changeUserCallBack"
     ></ChangeUserView>
   </div>
 </template>
@@ -47,6 +51,7 @@ import SongClassifyView from "@/views/SongClassify/SongClassifyView.vue";
 import TableView from "@/views/Table/TableView.vue";
 
 import { onResizeQueue, getHashStringArgs } from "@/utils/BaseUtils";
+import { song } from "@/config/song";
 
 export default {
   components: {
@@ -61,6 +66,11 @@ export default {
       fixedBoxObject: {},
       /* 当前是否是第一次进行pc和手机判断 */
       isFirstComparePcAndMobile: true,
+      /* 歌曲过滤所需的参数对象 */
+      songFilterObject: {
+        songType: "",
+        searchWord: "",
+      },
     };
   },
 
@@ -68,9 +78,32 @@ export default {
     getRole() {
       return this.$store.getters.getRole;
     },
+    getSongType() {
+      return this.$store.getters.getSongType;
+    },
+    /* 过滤表格歌曲应该显示哪些 */
+    getFilterSong() {
+      return song[this.getSongType].filter(
+        (item) =>
+          item.type.join("-").includes(this.songFilterObject.songType) &&
+          (item.songName
+            .toLocaleLowerCase()
+            .includes(this.songFilterObject.searchWord) ||
+            item.user
+              .toLocaleLowerCase()
+              .includes(this.songFilterObject.searchWord) ||
+            item.language
+              .toLocaleLowerCase()
+              .includes(this.songFilterObject.searchWord) ||
+            item.remarks
+              .toLocaleLowerCase()
+              .includes(this.songFilterObject.searchWord))
+      );
+    },
   },
 
   mounted() {
+    /* 页面初始化 */
     this.PageViewResizeEventListener();
     /* 加入到页面刷新事件队列 */
     onResizeQueue(this.PageViewResizeEventListener);
@@ -84,11 +117,14 @@ export default {
         if (this.isFirstComparePcAndMobile) {
           window.location.hash = "role=A";
           this.$store.commit("setRole", "A");
+          this.$store.commit("setSongType", "A");
           this.isFirstComparePcAndMobile = false;
           return;
         }
 
-        this.$store.commit("setRole", getHashStringArgs()["role"]);
+        const type = getHashStringArgs(location.hash)["role"];
+        this.$store.commit("setRole", type);
+        this.$store.commit("setSongType", type);
       } else if (window.innerWidth > 1000 && this.getRole !== "All") {
         this.$store.commit("setRole", "All");
 
@@ -98,8 +134,24 @@ export default {
     },
 
     /* 切换用户的回调 */
-    ChnageUserCallBack(result) {
-      console.log(result);
+    changeUserCallBack(result) {
+      this.$store.commit("setSongType", result);
+    },
+
+    /* 歌曲分类更改的回调 */
+    handleChangeSongType(value) {
+      this.songFilterObject.songType = value[0].id;
+    },
+
+    /* 搜索框搜索的回调 */
+    handleInputSearch(value) {
+      this.songFilterObject.searchWord = value;
+    },
+
+    /* 歌单被整个切换的回调 */
+    handleChangeSongSheet() {
+      this.songFilterObject.songType = "";
+      this.songFilterObject.searchWord = "";
     },
   },
 };

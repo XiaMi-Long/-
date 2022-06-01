@@ -4,23 +4,27 @@
  * @Author: wwy
  * @Date: 2022-05-19 17:00:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 15:27:16
+ * @LastEditTime: 2022-06-01 15:58:34
 -->
 <template>
   <div class="classification-container">
     <div class="song-classification">
+      <!-- 标题 -->
+      <div class="song-title">
+        <p>当前是 {{ filterUserName }} 的歌单</p>
+      </div>
       <!-- 搜索框 -->
       <div class="song-search">
-        <SongSearchPcView></SongSearchPcView>
+        <SongSearchPcView @input-search="handleInputSearch"></SongSearchPcView>
       </div>
       <!-- 分类按钮 -->
       <BaseButton
         @base-button-click="HandleBaseButtonClick"
-        v-for="(item, index) in songList"
+        v-for="(item, index) in filterSongList"
         :key="index"
       >
         <template #text>
-          <span>{{ item }}</span>
+          <span>{{ item.name }}</span>
         </template>
       </BaseButton>
     </div>
@@ -30,6 +34,8 @@
 <script>
 import BaseButton from "@/components/BaseButton/BaseButtonComponents.vue";
 import SongSearchPcView from "@/views/SongSearchPc/SongSearchPcView.vue";
+import { songType } from "@/config/type";
+import { User } from "@/config/user";
 
 export default {
   name: "SongClassifyView",
@@ -39,15 +45,55 @@ export default {
   },
   data() {
     return {
-      songList: ["RaP", "付费", "英语", "爵士", "jazz HipHop"],
+      /* 当前分类列表 */
+      songList: songType,
+      /* 当前被选中的分类文字 */
+      choiseClassify: "",
     };
   },
+
+  computed: {
+    getSongType() {
+      return this.$store.getters.getSongType;
+    },
+
+    filterSongList() {
+      const typeValue = this.getSongType;
+      return this.songList.filter((item) =>
+        User[typeValue].hasType.includes(item.id)
+      );
+    },
+
+    filterUserName() {
+      return User[this.getSongType].userName;
+    },
+  },
+
+  watch: {
+    getSongType() {
+      /* 如果切换歌单,清除按钮focus效果 */
+      this.HandleBaseButtonClick("");
+      /* 切换歌单的回调 */
+      this.$emit("change-song-sheet");
+    },
+  },
+
   methods: {
-    HandleBaseButtonClick() {
+    HandleBaseButtonClick(text) {
       const songBox = document.getElementsByClassName("song-classification")[0];
       songBox
         ?.getElementsByClassName("base-button-click-focus")[0]
         ?.classList.remove("base-button-click-focus");
+
+      this.choiseClassify = text;
+
+      /* 如果不是分类被点击 */
+      if (text === "") return;
+      this.$emit("change-song-type", this.choiseClassify);
+    },
+
+    handleInputSearch(value) {
+      this.$emit("change-input-search", value);
     },
   },
 };
@@ -68,6 +114,12 @@ export default {
     padding: 1em;
 
     border-radius: 0.7em;
+
+    .song-title {
+      font-size: 1.3em;
+
+      color: white;
+    }
 
     .base-button-click-focus {
       background-color: #0d0d0d;

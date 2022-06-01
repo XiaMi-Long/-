@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-17 19:12:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-25 16:16:58
+ * @LastEditTime: 2022-05-31 10:27:58
  */
 
 /**
@@ -28,9 +28,9 @@ export function onResizeQueue(method) {
  * 解析浏览器url中的hash字符串,转换为对象
  * @returns hash对象
  */
-export function getHashStringArgs() {
+export function getHashStringArgs(hash) {
   // 取得没有开头#的hash
-  let qs = location.hash.length > 0 ? location.hash.substring(1) : "",
+  let qs = hash.length > 0 ? hash.substring(1) : "",
     // 保存数据的对象
     args = {};
   // 把每个参数添加到 args 对象

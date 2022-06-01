@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-26 16:37:21
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 16:56:07
+ * @LastEditTime: 2022-06-01 16:05:27
  */
 export const song = {
   A: [
@@ -20,7 +20,7 @@ export const song = {
       user: "李荣浩",
       language: "中文",
       remarks: "李白",
-      type: ["A", "B", "C"],
+      type: ["A", "C"],
     },
     {
       songName: "我想",
@@ -34,28 +34,28 @@ export const song = {
       user: "林俊杰",
       language: "中文",
       remarks: "灵魂的共鸣",
-      type: ["A", "B", "C"],
+      type: ["A", "C"],
     },
     {
       songName: "its Like One!",
       user: "Psyntific",
       language: "英文",
       remarks: "its Like One!",
-      type: ["A", "B", "C"],
+      type: ["E"],
     },
     {
       songName: "淘汰",
       user: "陈奕迅",
       language: "粤语",
       remarks: "淘汰",
-      type: ["A", "B", "C"],
+      type: ["A", "B"],
     },
     {
       songName: "Lay it Down",
       user: "steelix",
       language: "英文",
       remarks: "Lay it Down",
-      type: ["A", "B", "C"],
+      type: ["B", "C"],
     },
   ],
   B: [
@@ -64,14 +64,21 @@ export const song = {
       user: "陈奕迅",
       language: "粤语",
       remarks: "淘汰",
-      type: ["A", "B", "C"],
+      type: ["B"],
     },
     {
       songName: "Lay it Down",
       user: "steelix",
       language: "英文",
       remarks: "Lay it Down",
-      type: ["A", "B", "C"],
+      type: ["A", "C"],
+    },
+    {
+      songName: "I Can't Help",
+      user: "Sarcastic Sounds",
+      language: "英文",
+      remarks: "I Can't Help",
+      type: ["A", "D"],
     },
   ],
 };

@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 19:38:31
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-25 18:23:52
+ * @LastEditTime: 2022-06-01 16:10:18
 -->
 <template>
   <div class="search-container">
@@ -12,10 +12,8 @@
       placeholder="搜索歌曲"
       v-model="inputValue"
       class="input-with-select"
+      @input="iconSearchClick"
     >
-      <div slot="append" class="search-icon">
-        <i class="el-icon-search"></i>
-      </div>
     </el-input>
   </div>
 </template>
@@ -27,6 +25,25 @@ export default {
     return {
       inputValue: "",
     };
+  },
+
+  computed: {
+    getSongType() {
+      return this.$store.getters.getSongType;
+    },
+  },
+
+  watch: {
+    /* 切换歌单清空输入框 */
+    getSongType() {
+      this.inputValue = "";
+    },
+  },
+
+  methods: {
+    iconSearchClick() {
+      this.$emit("input-search", this.inputValue);
+    },
   },
 };
 </script>

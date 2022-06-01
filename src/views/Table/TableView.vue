@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-26 15:24:38
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 17:34:50
+ * @LastEditTime: 2022-06-01 16:09:19
 -->
 <template>
   <div class="table-container">
@@ -40,42 +40,29 @@
 
 <script>
 import { song } from "@/config/song";
-
-// console.log(song);
-
 export default {
   name: "TableView",
+
+  props: {
+    filterSong: {
+      type: Array,
+      default: function () {
+        return [];
+      },
+    },
+  },
+
   data() {
     return {
-      songResult: {},
+      songResult: song["A"],
     };
   },
 
-  computed: {
-    getRole() {
-      return this.$store.getters.getRole;
-    },
-  },
+  computed: {},
 
   watch: {
-    getRole() {
-      /* 重新根据不同的角色加载不同的歌单 */
-      this.loadData();
-    },
-  },
-
-  mounted() {
-    this.loadData();
-  },
-
-  methods: {
-    /* 根据不同的角色加载不同的歌单 */
-    loadData() {
-      if (this.getRole === "All") {
-        this.songResult = song["A"];
-      } else {
-        this.songResult = song[this.getRole];
-      }
+    filterSong(newValue) {
+      this.songResult = newValue;
     },
   },
 };
