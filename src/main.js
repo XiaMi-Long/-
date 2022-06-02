@@ -4,14 +4,14 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 16:41:14
+ * @LastEditTime: 2022-06-02 09:44:48
  */
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-import { Icon, Dialog, Input, Drawer, Notification } from "element-ui";
+import { Icon, Dialog, Input, Drawer, Notification, Backtop } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
 import "./style/normalize.css";
@@ -22,6 +22,7 @@ Vue.use(Icon);
 Vue.use(Dialog);
 Vue.use(Input);
 Vue.use(Drawer);
+Vue.use(Backtop);
 
 Vue.config.productionTip = false;
 

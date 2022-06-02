@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 17:00:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 15:58:34
+ * @LastEditTime: 2022-06-02 10:18:57
 -->
 <template>
   <div class="classification-container">
@@ -132,6 +132,12 @@ export default {
     .song-search {
       text-align: center;
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .base-button {
+    display: block;
   }
 }
 </style>

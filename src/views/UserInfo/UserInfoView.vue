@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-17 16:28:15
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 17:36:48
+ * @LastEditTime: 2022-06-02 09:57:31
 -->
 <template>
   <div class="user-box">
@@ -13,11 +13,13 @@
         <h3 class="left-name">{{ info.userName }}的自我介绍</h3>
       </div>
       <div class="right">
-        <img
-          class="right-icon"
-          src="~@/assets/cloudmusic.png"
-          alt="网易云音乐"
-        />
+        <a :href="info.cloudMusicUrl" target="_blank">
+          <img
+            class="right-icon"
+            src="~@/assets/cloudmusic.png"
+            alt="网易云音乐"
+          />
+        </a>
       </div>
     </div>
 
@@ -71,6 +73,8 @@ export default {
       width: 50%;
 
       text-align: right;
+
+      cursor: pointer;
 
       &-icon {
         width: 40px;

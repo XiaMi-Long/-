@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 16:13:11
+ * @LastEditTime: 2022-06-02 10:15:27
 -->
 <!--
  * @Descripttion: 
@@ -41,6 +41,9 @@
       v-if="getRole !== 'All'"
       @change-user="changeUserCallBack"
     ></ChangeUserView>
+
+    <!-- 回到顶部 -->
+    <el-backtop></el-backtop>
   </div>
 </template>
 
@@ -140,6 +143,10 @@ export default {
 
     /* 歌曲分类更改的回调 */
     handleChangeSongType(value) {
+      /* 如果选中的被取消了,就查询全部 */
+      if (value.length === 0) {
+        value.push({ id: "" });
+      }
       this.songFilterObject.songType = value[0].id;
     },
 

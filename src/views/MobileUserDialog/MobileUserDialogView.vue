@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-17 19:56:12
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 17:41:07
+ * @LastEditTime: 2022-06-02 09:55:25
 -->
 <template>
   <div>
@@ -24,7 +24,7 @@
 
       <p>&nbsp;</p>
 
-      <a href="#" class="href-button">
+      <a :href="info.cloudMusicUrl" class="href-button" target="_blank">
         <div class="button">
           {{ info.userName }}的网易云主页 <i class="el-icon-arrow-right"></i>
         </div>

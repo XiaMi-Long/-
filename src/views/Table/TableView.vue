@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-26 15:24:38
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 16:46:33
+ * @LastEditTime: 2022-06-02 10:43:13
 -->
 <template>
   <div class="table-container">
@@ -22,7 +22,7 @@
         </thead>
         <tbody>
           <tr
-            class="table-thody-tr"
+            class="table-thody-tr animate__animated animate__fadeInLeft"
             v-for="(item, index) in songResult"
             :key="index"
             @click="handleTableTrClick($event)"
@@ -32,6 +32,16 @@
             <td class="table-thody-td">{{ item.user }}</td>
             <td class="table-thody-td">{{ item.language }}</td>
             <td class="table-thody-td">{{ item.remarks }}</td>
+            <td class="table-thody-td" v-if="item.isHot">
+              <div class="table-thody-td-hot-icon">
+                <img src="@/assets/HOT.png" alt="热门" />
+              </div>
+            </td>
+            <td class="table-thody-td" v-if="item.isNew">
+              <div class="table-thody-td-hot-icon">
+                <img src="@/assets/NEW.png" alt="最新" />
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -71,6 +81,17 @@ export default {
 
   methods: {
     handleTableTrClick(event) {
+      const nodeName = event.path[0].nodeName.toLocaleLowerCase();
+      if (nodeName === "img" || nodeName === "div") {
+        this.$notify({
+          title: "复制失败",
+          message: "标签无法复制",
+          type: "error",
+          duration: 1500,
+        });
+        return;
+      }
+
       const copyText = event.path[1].childNodes[1].innerText;
       asyncClipboardUtils({
         type: "write-text",
@@ -85,6 +106,9 @@ export default {
         },
         writeError: function (error) {
           console.log(error);
+        },
+        error: (err) => {
+          console.log(err);
         },
       });
     },
@@ -140,6 +164,12 @@ export default {
 
       .table-thody-td {
         padding: 0.5em;
+
+        .table-thody-td-hot-icon {
+          line-height: 10px;
+
+          cursor: auto;
+        }
       }
 
       .id-th {

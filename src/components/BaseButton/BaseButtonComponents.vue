@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 16:59:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 15:54:32
+ * @LastEditTime: 2022-06-02 10:14:06
 -->
 <template>
   <div class="base-button" @click="btnClick($event)">
@@ -19,15 +19,28 @@ export default {
   name: "BaseButtonComponents",
   methods: {
     btnClick(event) {
+      const event0 = event.path[0];
+      const event1 = event.path[1];
+      if (
+        event0.classList.contains("base-button-click-focus") ||
+        event1.classList.contains("base-button-click-focus")
+      ) {
+        this.$emit(
+          "base-button-click",
+          songType.filter((item) => item.name === "")
+        );
+        return;
+      }
+
       this.$emit(
         "base-button-click",
         songType.filter((item) => item.name === event.target.innerText)
       );
 
-      if (event.path[0].nodeName.toLocaleLowerCase() === "span") {
-        event.path[1].classList.add("base-button-click-focus");
+      if (event0.nodeName.toLocaleLowerCase() === "span") {
+        event1.classList.add("base-button-click-focus");
       } else {
-        event.path[0].classList.add("base-button-click-focus");
+        event0.classList.add("base-button-click-focus");
       }
     },
   },

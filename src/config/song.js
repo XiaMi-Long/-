@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-26 16:37:21
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 16:05:27
+ * @LastEditTime: 2022-06-02 10:36:57
  */
 export const song = {
   A: [
@@ -14,6 +14,7 @@ export const song = {
       language: "中文",
       remarks: "爸爸妈妈",
       type: ["A", "B", "C"],
+      isNew: true,
     },
     {
       songName: "李白",
@@ -21,6 +22,7 @@ export const song = {
       language: "中文",
       remarks: "李白",
       type: ["A", "C"],
+      isHot: true,
     },
     {
       songName: "我想",
@@ -28,6 +30,7 @@ export const song = {
       language: "中文",
       remarks: "我想",
       type: ["A", "B", "C"],
+      isHot: true,
     },
     {
       songName: "灵魂的共鸣",
@@ -35,6 +38,7 @@ export const song = {
       language: "中文",
       remarks: "灵魂的共鸣",
       type: ["A", "C"],
+      isHot: true,
     },
     {
       songName: "its Like One!",
@@ -42,6 +46,7 @@ export const song = {
       language: "英文",
       remarks: "its Like One!",
       type: ["E"],
+      isNew: true,
     },
     {
       songName: "淘汰",
@@ -56,6 +61,155 @@ export const song = {
       language: "英文",
       remarks: "Lay it Down",
       type: ["B", "C"],
+      isNew: true,
+    },
+    {
+      songName: "thesapientdream",
+      user: "sapientdream",
+      language: "英文",
+      remarks: "thesapientdream",
+      type: ["B", "C", "E"],
+      isNew: true,
+    },
+    {
+      songName: "7 Years",
+      user: "years",
+      language: "英文",
+      remarks: "7",
+      type: ["B", "C"],
+    },
+    {
+      songName: "Put Your Head On My Shoulder",
+      user: "Paul Anka",
+      language: "英文",
+      remarks: "Paul Anka",
+      type: ["B", "C"],
+    },
+    {
+      songName: "NUMB",
+      user: "xxxx",
+      language: "英文",
+      remarks: "NUMB",
+      type: ["B", "C"],
+    },
+    {
+      songName: "淘汰",
+      user: "陈奕迅",
+      language: "粤语",
+      remarks: "淘汰",
+      type: ["B"],
+    },
+    {
+      songName: "Lay it Down",
+      user: "steelix",
+      language: "英文",
+      remarks: "Lay it Down",
+      type: ["A", "C"],
+    },
+    {
+      songName: "I Can't Help",
+      user: "Sarcastic Sounds",
+      language: "英文",
+      remarks: "I Can't Help",
+      type: ["A", "D"],
+    },
+    {
+      songName: "Put Your Head On My Shoulder",
+      user: "Paul Anka",
+      language: "英文",
+      remarks: "Paul Anka",
+      type: ["B", "C"],
+    },
+    {
+      songName: "NUMB",
+      user: "xxxx",
+      language: "英文",
+      remarks: "NUMB",
+      type: ["B", "C"],
+    },
+    {
+      songName: "淘汰",
+      user: "陈奕迅",
+      language: "粤语",
+      remarks: "淘汰",
+      type: ["B"],
+    },
+    {
+      songName: "Lay it Down",
+      user: "steelix",
+      language: "英文",
+      remarks: "Lay it Down",
+      type: ["B", "C"],
+    },
+    {
+      songName: "thesapientdream",
+      user: "sapientdream",
+      language: "英文",
+      remarks: "thesapientdream",
+      type: ["B", "C", "E"],
+    },
+    {
+      songName: "7 Years",
+      user: "years",
+      language: "英文",
+      remarks: "7",
+      type: ["B", "C"],
+    },
+    {
+      songName: "Put Your Head On My Shoulder",
+      user: "Paul Anka",
+      language: "英文",
+      remarks: "Paul Anka",
+      type: ["B", "C"],
+    },
+    {
+      songName: "NUMB",
+      user: "xxxx",
+      language: "英文",
+      remarks: "NUMB",
+      type: ["B", "C"],
+    },
+    {
+      songName: "淘汰",
+      user: "陈奕迅",
+      language: "粤语",
+      remarks: "淘汰",
+      type: ["B"],
+    },
+    {
+      songName: "Lay it Down",
+      user: "steelix",
+      language: "英文",
+      remarks: "Lay it Down",
+      type: ["A", "C"],
+    },
+    {
+      songName: "I Can't Help",
+      user: "Sarcastic Sounds",
+      language: "英文",
+      remarks: "I Can't Help",
+      type: ["A", "D"],
+    },
+    {
+      songName: "Put Your Head On My Shoulder",
+      user: "Paul Anka",
+      language: "英文",
+      remarks: "Paul Anka",
+      type: ["B", "C"],
+    },
+    {
+      songName: "NUMB",
+      user: "xxxx",
+      language: "英文",
+      remarks: "NUMB",
+      type: ["B", "C"],
+    },
+    {
+      songName: "淘汰",
+      user: "陈奕迅",
+      language: "粤语",
+      remarks: "淘汰",
+      type: ["B"],
     },
   ],
   B: [

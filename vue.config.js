@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 09:19:12
+ * @LastEditTime: 2022-06-02 09:26:23
  */
 const { defineConfig } = require("@vue/cli-service");
 
@@ -36,10 +36,13 @@ module.exports = defineConfig({
   },
 
   configureWebpack: {
-    plugins: [
-      new CopyWepackPlugin({
-        patterns: [{ from: "src/config", to: "" }],
-      }),
-    ],
+    plugins:
+      process.env.NODE_ENV === "production"
+        ? [
+            new CopyWepackPlugin({
+              patterns: [{ from: "src/config", to: "" }],
+            }),
+          ]
+        : [],
   },
 });

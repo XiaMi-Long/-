@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:35:36
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 14:30:32
+ * @LastEditTime: 2022-06-02 09:55:22
  */
 export const User = {
   A: {
@@ -22,6 +22,7 @@ export const User = {
     ],
     bilibiliUrl: "https://space.bilibili.com/639343375?spm_id_from=333.337.0.0",
     hasType: ["A", "B", "C", "E"],
+    cloudMusicUrl: "https://music.163.com/#/user/home?id=1980844493",
   },
   B: {
     userName: "❤",
@@ -39,5 +40,6 @@ export const User = {
     ],
     bilibiliUrl: "https://account.bilibili.com/account/home",
     hasType: ["B", "C", "D"],
+    cloudMusicUrl: "https://music.163.com/#/user/home?id=1980844493",
   },
 };
