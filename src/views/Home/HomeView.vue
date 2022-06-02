@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 10:15:27
+ * @LastEditTime: 2022-06-02 11:30:50
 -->
 <!--
  * @Descripttion: 
@@ -54,7 +54,7 @@ import SongClassifyView from "@/views/SongClassify/SongClassifyView.vue";
 import TableView from "@/views/Table/TableView.vue";
 
 import { onResizeQueue, getHashStringArgs } from "@/utils/BaseUtils";
-import { song } from "@/config/song";
+import { song } from "../../song";
 
 export default {
   components: {
@@ -166,8 +166,10 @@ export default {
 
 <style lang="scss" scoped>
 .box {
-  background: url("@/assets/wallhaven-3.png") no-repeat;
-  background-size: cover;
+  // background: url("@/assets/wallhaven-3.png") no-repeat;
+  // background-size: cover;
+
+  background-color: #272525;
 
   opacity: 0.8;
 }

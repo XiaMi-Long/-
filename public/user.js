@@ -4,15 +4,16 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:35:36
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 09:55:22
+ * @LastEditTime: 2022-06-02 11:34:29
  */
-export const User = {
+window._user = {
   A: {
     userName: "洛琪希",
     photo: "",
     text1: "Lay It Down",
     text2: "寻找向日葵气味的武士",
     text3: "永远的Jazz Hiphop",
+    text4: "去洛琪希神教",
     introduce: [
       "魔族“米格路德族”的水圣级魔法师。",
       "身为长寿的米格路德族，外表是无表情的蓝发美少女，实际是个成年人",
@@ -31,6 +32,7 @@ export const User = {
     text2: "起风了!",
     text3:
       "隐约雷鸣，阴霾天空，但盼风雨来，能留君在此。隐约雷鸣，阴霾天空，即使天无雨，吾亦留在此",
+    text4: "返回神圣之地",
     introduce: [
       "隐约雷鸣",
       "阴霾天空",

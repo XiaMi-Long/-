@@ -4,9 +4,9 @@
  * @Author: wwy
  * @Date: 2022-05-26 16:37:21
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 10:36:57
+ * @LastEditTime: 2022-06-02 11:34:38
  */
-export const song = {
+window._song = {
   A: [
     {
       songName: "爸爸妈妈",

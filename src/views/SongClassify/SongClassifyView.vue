@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 17:00:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 10:18:57
+ * @LastEditTime: 2022-06-02 11:19:46
 -->
 <template>
   <div class="classification-container">
@@ -34,8 +34,8 @@
 <script>
 import BaseButton from "@/components/BaseButton/BaseButtonComponents.vue";
 import SongSearchPcView from "@/views/SongSearchPc/SongSearchPcView.vue";
-import { songType } from "@/config/type";
-import { User } from "@/config/user";
+import { songType } from "../../type";
+import { User } from "../../user";
 
 export default {
   name: "SongClassifyView",

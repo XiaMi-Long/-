@@ -4,9 +4,9 @@
  * @Author: wwy
  * @Date: 2022-05-26 16:40:11
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 16:41:22
+ * @LastEditTime: 2022-06-02 11:34:45
  */
-export const songType = [
+window._songType = [
   {
     name: "RAP",
     id: "A",

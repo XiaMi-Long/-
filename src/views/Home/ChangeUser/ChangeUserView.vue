@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 17:31:54
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-25 16:36:59
+ * @LastEditTime: 2022-06-02 11:20:33
 -->
 <template>
   <div class="change-user-container" @click="handleChangeUser">
@@ -14,14 +14,15 @@
 </template>
 
 <script>
+import { User } from "../../../user";
 const ChangeUserView = {
   A: {
     imgUrl: require("@/assets/preview.jpg"),
-    text: "去洛琪希神教",
+    text: User.text4,
   },
   B: {
     imgUrl: require("@/assets/sky.jpg"),
-    text: "返回神圣之地",
+    text: User.text4,
   },
 };
 export default {

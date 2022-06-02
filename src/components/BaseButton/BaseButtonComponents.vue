@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 16:59:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 10:14:06
+ * @LastEditTime: 2022-06-02 11:16:41
 -->
 <template>
   <div class="base-button" @click="btnClick($event)">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { songType } from "@/config/type";
+import { songType } from "../../type";
 
 export default {
   name: "BaseButtonComponents",
