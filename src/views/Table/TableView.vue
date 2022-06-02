@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-26 15:24:38
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 16:09:19
+ * @LastEditTime: 2022-06-01 16:46:33
 -->
 <template>
   <div class="table-container">
@@ -25,6 +25,7 @@
             class="table-thody-tr"
             v-for="(item, index) in songResult"
             :key="index"
+            @click="handleTableTrClick($event)"
           >
             <td class="table-thody-td">{{ index + 1 }}</td>
             <td class="table-thody-td">{{ item.songName }}</td>
@@ -39,7 +40,9 @@
 </template>
 
 <script>
+import { asyncClipboardUtils } from "async-clipboard-utils";
 import { song } from "@/config/song";
+
 export default {
   name: "TableView",
 
@@ -63,6 +66,27 @@ export default {
   watch: {
     filterSong(newValue) {
       this.songResult = newValue;
+    },
+  },
+
+  methods: {
+    handleTableTrClick(event) {
+      const copyText = event.path[1].childNodes[1].innerText;
+      asyncClipboardUtils({
+        type: "write-text",
+        text: copyText,
+        writeSuccess: () => {
+          this.$notify({
+            title: "复制成功",
+            message: "复制内容为：" + copyText,
+            type: "success",
+            duration: 2000,
+          });
+        },
+        writeError: function (error) {
+          console.log(error);
+        },
+      });
     },
   },
 };
