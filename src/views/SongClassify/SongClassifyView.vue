@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 17:00:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:19:46
+ * @LastEditTime: 2022-06-02 11:44:23
 -->
 <template>
   <div class="classification-container">
@@ -34,8 +34,6 @@
 <script>
 import BaseButton from "@/components/BaseButton/BaseButtonComponents.vue";
 import SongSearchPcView from "@/views/SongSearchPc/SongSearchPcView.vue";
-import { songType } from "../../type";
-import { User } from "../../user";
 
 export default {
   name: "SongClassifyView",
@@ -46,7 +44,7 @@ export default {
   data() {
     return {
       /* 当前分类列表 */
-      songList: songType,
+      songList: window._songType,
       /* 当前被选中的分类文字 */
       choiseClassify: "",
     };
@@ -60,12 +58,12 @@ export default {
     filterSongList() {
       const typeValue = this.getSongType;
       return this.songList.filter((item) =>
-        User[typeValue].hasType.includes(item.id)
+        window._user[typeValue].hasType.includes(item.id)
       );
     },
 
     filterUserName() {
-      return User[this.getSongType].userName;
+      return window._user[this.getSongType].userName;
     },
   },
 

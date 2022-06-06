@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 17:31:54
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:20:33
+ * @LastEditTime: 2022-06-02 11:36:57
 -->
 <template>
   <div class="change-user-container" @click="handleChangeUser">
@@ -14,15 +14,14 @@
 </template>
 
 <script>
-import { User } from "../../../user";
 const ChangeUserView = {
   A: {
     imgUrl: require("@/assets/preview.jpg"),
-    text: User.text4,
+    text: window._user.text4,
   },
   B: {
     imgUrl: require("@/assets/sky.jpg"),
-    text: User.text4,
+    text: window._user.text4,
   },
 };
 export default {

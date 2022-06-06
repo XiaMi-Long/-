@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 15:51:18
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:17:37
+ * @LastEditTime: 2022-06-02 11:37:34
 -->
 <template>
   <div class="user_container">
@@ -106,8 +106,6 @@ import UserInfoView from "@/views/UserInfo/UserInfoView.vue";
 
 import MobileUserDialogView from "@/views/MobileUserDialog/MobileUserDialogView.vue";
 
-import { User } from "../../../user";
-
 export default {
   name: "UserView",
   components: {
@@ -121,8 +119,8 @@ export default {
       leftPhoto: require("@/assets/sky.jpg"),
       rightPhoto: require("@/assets/preview.jpg"),
 
-      introduceUserA: User["A"],
-      introduceUserB: User["B"],
+      introduceUserA: window._user["A"],
+      introduceUserB: window._user["B"],
 
       leftDialogVisible: false,
       rightDialogVisible: false,

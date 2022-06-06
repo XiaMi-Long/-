@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 16:59:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:16:41
+ * @LastEditTime: 2022-06-02 11:43:52
 -->
 <template>
   <div class="base-button" @click="btnClick($event)">
@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import { songType } from "../../type";
-
 export default {
   name: "BaseButtonComponents",
   methods: {
@@ -27,14 +25,14 @@ export default {
       ) {
         this.$emit(
           "base-button-click",
-          songType.filter((item) => item.name === "")
+          window._songType.filter((item) => item.name === "")
         );
         return;
       }
 
       this.$emit(
         "base-button-click",
-        songType.filter((item) => item.name === event.target.innerText)
+        window._songType.filter((item) => item.name === event.target.innerText)
       );
 
       if (event0.nodeName.toLocaleLowerCase() === "span") {

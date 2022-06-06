@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:30:50
+ * @LastEditTime: 2022-06-02 11:38:49
 -->
 <!--
  * @Descripttion: 
@@ -54,7 +54,6 @@ import SongClassifyView from "@/views/SongClassify/SongClassifyView.vue";
 import TableView from "@/views/Table/TableView.vue";
 
 import { onResizeQueue, getHashStringArgs } from "@/utils/BaseUtils";
-import { song } from "../../song";
 
 export default {
   components: {
@@ -86,7 +85,7 @@ export default {
     },
     /* 过滤表格歌曲应该显示哪些 */
     getFilterSong() {
-      return song[this.getSongType].filter(
+      return window._song[this.getSongType].filter(
         (item) =>
           item.type.join("-").includes(this.songFilterObject.songType) &&
           (item.songName

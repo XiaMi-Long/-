@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-26 15:24:38
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:18:36
+ * @LastEditTime: 2022-06-02 11:35:50
 -->
 <template>
   <div class="table-container">
@@ -51,7 +51,6 @@
 
 <script>
 import { asyncClipboardUtils } from "async-clipboard-utils";
-import { song } from "../../song";
 
 export default {
   name: "TableView",
@@ -67,7 +66,7 @@ export default {
 
   data() {
     return {
-      songResult: song["A"],
+      songResult: window._song["A"],
     };
   },
 
