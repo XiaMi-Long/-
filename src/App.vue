@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 17:09:47
+ * @LastEditTime: 2022-06-07 09:46:45
 -->
 <template>
   <div id="app">
@@ -26,26 +26,47 @@
   height: 100%;
 }
 
-* {
-  /*里面的代码可以根据自己需求去进行更改*/
-  /* 设置滚动条的样式 */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  /* 滚动槽 */
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-  }
-  /* 滚动条滑块 */
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: #ff6f91;
-  }
+// html {
+//   /*里面的代码可以根据自己需求去进行更改*/
+//   /* 设置滚动条的样式 */
+//   ::-webkit-scrollbar {
+//     width: 10px;
+//   }
+//   /* 滚动槽 */
+//   ::-webkit-scrollbar-track {
+//     -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+//     // border-radius: 10px;
+//   }
+//   /* 滚动条滑块 */
+//   ::-webkit-scrollbar-thumb {
+//     border-radius: 10px;
+//     background: #ff6f91;
+//   }
 
-  ::-webkit-scrollbar-track-piece {
-    border-radius: 30px;
-    background-color: #b0a8b9;
-  }
-}
+//   ::-webkit-scrollbar-track-piece {
+//     border-radius: 0.7em;
+//     background-color: #b0a8b9;
+//   }
+
+//   div {
+//     ::-webkit-scrollbar {
+//       width: 1px;
+//     }
+//     /* 滚动槽 */
+//     ::-webkit-scrollbar-track {
+//       -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+//       // border-radius: 10px;
+//     }
+//     /* 滚动条滑块 */
+//     ::-webkit-scrollbar-thumb {
+//       border-radius: 0em;
+//       background-color: #f1f1f1;
+//     }
+
+//     ::-webkit-scrollbar-track-piece {
+//       border-radius: 0em;
+//       background: #c1c1c1;
+//     }
+//   }
+// }
 </style>

@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 17:00:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:44:23
+ * @LastEditTime: 2022-06-17 16:39:32
 -->
 <template>
   <div class="classification-container">
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import BaseButton from "@/components/BaseButton/BaseButtonComponents.vue";
+import BaseButton from "@/components/BaseButton/index.vue";
 import SongSearchPcView from "@/views/SongSearchPc/SongSearchPcView.vue";
 
 export default {

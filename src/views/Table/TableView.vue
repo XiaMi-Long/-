@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-26 15:24:38
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:35:50
+ * @LastEditTime: 2022-06-07 10:54:26
 -->
 <template>
   <div class="table-container">
@@ -108,6 +108,12 @@ export default {
         },
         error: (err) => {
           console.log(err);
+          this.$notify({
+            title: "复制失败",
+            message: "请确认网站为HTTPS协议",
+            type: "error",
+            duration: 1500,
+          });
         },
       });
     },

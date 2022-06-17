@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 17:31:54
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:36:57
+ * @LastEditTime: 2022-06-07 10:52:32
 -->
 <template>
   <div class="change-user-container" @click="handleChangeUser">
@@ -14,22 +14,24 @@
 </template>
 
 <script>
+import { getHashStringArgs } from "@/utils/BaseUtils";
+
 const ChangeUserView = {
   A: {
     imgUrl: require("@/assets/preview.jpg"),
-    text: window._user.text4,
+    text: window._user["A"].text4,
   },
   B: {
     imgUrl: require("@/assets/sky.jpg"),
-    text: window._user.text4,
+    text: window._user["B"].text4,
   },
 };
 export default {
   name: "ChnageUserView",
   data() {
     return {
-      imgUrl: ChangeUserView["A"].imgUrl,
-      text: ChangeUserView["A"].text,
+      imgUrl: ChangeUserView[window._config["defaultShowUser"]].imgUrl,
+      text: ChangeUserView[window._config["defaultShowUser"]].text,
     };
   },
   computed: {
@@ -37,10 +39,23 @@ export default {
       return this.$store.getters.getRole;
     },
   },
+
+  mounted() {
+    /* 视频根据不同hash-Url在页面初始化时决定显示A还是B */
+    this.$nextTick(() => {
+      /* 决定应该显示A还是B */
+      this.handleChangeUser("init");
+    });
+  },
+
   methods: {
-    handleChangeUser() {
-      const result = this.getRole === "A" ? "B" : "A";
-      window.location.hash = `role=${result}`;
+    handleChangeUser(type) {
+      let result = "";
+      if (type === "init") {
+        result = getHashStringArgs(location.hash)["role"];
+      } else {
+        result = this.getRole === "A" ? "B" : "A";
+      }
 
       this.$store.commit("setRole", result);
       this.imgUrl = ChangeUserView[result].imgUrl;

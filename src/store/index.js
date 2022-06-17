@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 14:38:44
+ * @LastEditTime: 2022-06-07 10:34:15
  */
 import Vue from "vue";
 import Vuex from "vuex";
@@ -14,7 +14,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     /* 当前页面的角色 */
-    role: "All",
+    role: "",
 
     /* 当前页面的歌单主体 */
     songType: "A",

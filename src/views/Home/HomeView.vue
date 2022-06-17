@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:38:49
+ * @LastEditTime: 2022-06-07 10:52:02
 -->
 <!--
  * @Descripttion: 
@@ -115,16 +115,18 @@ export default {
     /* 添加网页视口变化事件 */
     PageViewResizeEventListener() {
       if (window.innerWidth <= 1000) {
+        let type = getHashStringArgs(location.hash)["role"];
         /* 如果是第一次 */
         if (this.isFirstComparePcAndMobile) {
-          window.location.hash = "role=A";
-          this.$store.commit("setRole", "A");
-          this.$store.commit("setSongType", "A");
+          // 如果是All证明是从大屏转到小屏的
+          if (type === "All") {
+            // 获取默认展示A还是B的默认值
+            type = window._config["defaultShowUser"];
+          }
+
           this.isFirstComparePcAndMobile = false;
-          return;
         }
 
-        const type = getHashStringArgs(location.hash)["role"];
         this.$store.commit("setRole", type);
         this.$store.commit("setSongType", type);
       } else if (window.innerWidth > 1000 && this.getRole !== "All") {
