@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'consolas';
   src: url('@/assets/font/consola.ttf');
+  font-display: swap;
 }
 
 *{

@@ -4,11 +4,11 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-07 09:46:45
+ * @LastEditTime: 2022-06-21 09:48:55
 -->
 <template>
   <div id="app">
-    <router-view />
+    <router-view></router-view>
   </div>
 </template>
 
