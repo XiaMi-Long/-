@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 17:31:54
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-07 10:52:32
+ * @LastEditTime: 2022-06-21 09:52:21
 -->
 <template>
   <div class="change-user-container" @click="handleChangeUser">
@@ -24,6 +24,10 @@ const ChangeUserView = {
   B: {
     imgUrl: require("@/assets/sky.jpg"),
     text: window._user["B"].text4,
+  },
+  All: {
+    imgUrl: "",
+    text: "",
   },
 };
 export default {

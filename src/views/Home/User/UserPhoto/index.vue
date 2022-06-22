@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-06-02 09:29:46
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 09:30:05
+ * @LastEditTime: 2022-06-20 21:20:58
 -->
 <template>
   <div class="round">
@@ -19,7 +19,7 @@ export default {
     photoUrl: {
       type: String,
       default: function () {
-        return require("@/assets/yilein.png");
+        return "";
       },
     },
   },
