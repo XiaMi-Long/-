@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 15:51:18
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-22 17:46:27
+ * @LastEditTime: 2022-06-29 11:30:52
 -->
 <template>
   <div class="user_container">
@@ -212,7 +212,7 @@ export default {
 }
 
 .mobile_button {
-  color: #fff;
+  color: $user-button-text-color;
 
   margin: {
     top: 1em;
@@ -222,6 +222,8 @@ export default {
   .mobile_introduce {
     width: 90px;
     height: 28px;
+
+    color: $user-button-text-color;
 
     padding: 5px;
 
@@ -236,7 +238,8 @@ export default {
     margin: 0 10px;
 
     &:hover {
-      background-color: #ffffff33;
+      background-color: $user-button-hvoer-background-color;
+      color: $user-button-hover-text-color;
     }
   }
 }
@@ -252,7 +255,6 @@ export default {
 
 .a-clear-default-style {
   text-decoration: none;
-  color: white;
 }
 
 // 小于700

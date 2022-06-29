@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-21 09:48:55
+ * @LastEditTime: 2022-06-29 11:42:54
 -->
 <template>
   <div id="app">
@@ -24,6 +24,15 @@
 
   width: 100%;
   height: 100%;
+
+  /* webkit, opera, IE9 */
+  ::selection {
+    background: #409eff;
+  }
+  /* mozilla firefox */
+  ::-moz-selection {
+    background: #409eff;
+  }
 }
 
 // html {

@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-22 17:48:14
+ * @LastEditTime: 2022-06-28 20:04:38
 -->
 <!--
  * @Descripttion: 
@@ -167,8 +167,8 @@ export default {
 
 <style lang="scss" scoped>
 .box {
-  // background: url("@/assets/wallhaven-3.png") no-repeat;
-  // background-size: cover;
+  background: url("@/assets/background.jpg") no-repeat;
+  background-size: cover;
 
   background-color: #272525;
 

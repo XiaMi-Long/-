@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 19:38:31
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-01 16:10:18
+ * @LastEditTime: 2022-06-29 11:35:14
 -->
 <template>
   <div class="search-container">
@@ -66,11 +66,11 @@ export default {
       box-shadow: 0 0 5px;
     }
 
-    background-color: #545454;
+    background-color: $song-input-background-color;
 
     border: 1px solid #545454;
 
-    color: white;
+    color: $song-input-text-color;
   }
 
   ::v-deep .el-input-group__append {

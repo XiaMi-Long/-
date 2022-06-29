@@ -8,3 +8,32 @@
   justify-content: center;
   align-items: center;
 }
+
+// 用户简述文字颜色
+$user-info-text-color: black;
+// 用户简述文字阴影颜色
+$user-info-text-shadow-color: #d6bdbd;
+// 歌曲分类按钮文字颜色
+$song-classify-text-color: black;
+// 歌曲分类按钮背景颜色
+$song-classify-background-color: #64b0ff;
+// 歌曲分类按钮鼠标悬浮时的背景颜色
+$song-classify-hover-background-color: #64b0ff;
+// 个人介绍等功能按钮文字颜色
+$user-button-text-color: black;
+// 个人介绍等功能按钮文字被鼠标悬浮时的背景颜色
+$user-button-hvoer-background-color: #409eff;
+// 个人介绍等功能按钮文字被鼠标悬浮时的文字颜色
+$user-button-hover-text-color: white;
+// 歌单标题文字颜色
+$song-title-text-color: black;
+// 表格里面的文字颜色
+$table-text-color: #252222;
+// 表格行被鼠标悬浮时的颜色
+$table-tr-hover-background-color: #409eff;
+// 切换用户组件的文字颜色
+$changer-user-text-color: black;
+// 歌曲搜索框背景颜色
+$song-input-background-color: white;
+// 歌曲搜索框文字颜色
+$song-input-text-color: black;

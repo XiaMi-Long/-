@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-26 15:24:38
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-07 10:54:26
+ * @LastEditTime: 2022-06-29 11:16:37
 -->
 <template>
   <div class="table-container">
@@ -139,7 +139,7 @@ export default {
 
     font-weight: 600;
 
-    color: #ded5d5;
+    color: $table-text-color;
 
     overflow-x: auto;
     .song-table {
@@ -163,7 +163,7 @@ export default {
 
         transition: background-color 0.25s ease;
         &:hover {
-          background-color: #050505;
+          background-color: $table-tr-hover-background-color;
         }
       }
 
