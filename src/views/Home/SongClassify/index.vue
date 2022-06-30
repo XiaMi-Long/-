@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 17:00:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-17 16:39:32
+ * @LastEditTime: 2022-06-29 11:12:39
 -->
 <template>
   <div class="classification-container">
@@ -33,7 +33,7 @@
 
 <script>
 import BaseButton from "@/components/BaseButton/index.vue";
-import SongSearchPcView from "@/views/SongSearchPc/SongSearchPcView.vue";
+import SongSearchPcView from "./SongSearchPc/index.vue";
 
 export default {
   name: "SongClassifyView",
@@ -116,13 +116,13 @@ export default {
     .song-title {
       font-size: 1.3em;
 
-      color: white;
+      color: $song-title-text-color;
     }
 
     .base-button-click-focus {
-      background-color: #0d0d0d;
+      background-color: $song-classify-background-color;
 
-      border: 1px solid #0d0d0d;
+      border: 1px solid $song-classify-hover-background-color;
 
       box-shadow: 0 0 5px;
     }

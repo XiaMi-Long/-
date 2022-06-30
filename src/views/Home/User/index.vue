@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 15:51:18
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:37:34
+ * @LastEditTime: 2022-06-29 11:30:52
 -->
 <template>
   <div class="user_container">
@@ -100,11 +100,10 @@
 </template>
 
 <script>
-import UserPhotoView from "@/views/UserPhoto/UserPhotoView.vue";
-import UserIntroduceView from "@/views/UserIntroduce/UserIntroduceView.vue";
-import UserInfoView from "@/views/UserInfo/UserInfoView.vue";
-
-import MobileUserDialogView from "@/views/MobileUserDialog/MobileUserDialogView.vue";
+import UserPhotoView from "@/views/Home/User/UserPhoto/index.vue";
+import UserIntroduceView from "@/views/Home/User/UserIntroduce/index.vue";
+import UserInfoView from "@/views/Home/User/UserInfo/index.vue";
+import MobileUserDialogView from "@/views/Home/User/MobileUserDialog/index.vue";
 
 export default {
   name: "UserView",
@@ -213,7 +212,7 @@ export default {
 }
 
 .mobile_button {
-  color: #fff;
+  color: $user-button-text-color;
 
   margin: {
     top: 1em;
@@ -223,6 +222,8 @@ export default {
   .mobile_introduce {
     width: 90px;
     height: 28px;
+
+    color: $user-button-text-color;
 
     padding: 5px;
 
@@ -237,7 +238,8 @@ export default {
     margin: 0 10px;
 
     &:hover {
-      background-color: #ffffff33;
+      background-color: $user-button-hvoer-background-color;
+      color: $user-button-hover-text-color;
     }
   }
 }
@@ -253,7 +255,6 @@ export default {
 
 .a-clear-default-style {
   text-decoration: none;
-  color: white;
 }
 
 // 小于700

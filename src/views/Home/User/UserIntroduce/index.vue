@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-17 15:03:26
  * @LastEditors: wwy
- * @LastEditTime: 2022-05-26 17:42:39
+ * @LastEditTime: 2022-06-29 11:03:05
 -->
 <template>
   <div class="text">
@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .text {
-  color: white;
+  color: $user-info-text-color;
 
   padding: {
     left: 30px;
@@ -46,7 +46,7 @@ export default {
 .h2 {
   letter-spacing: 0.3em;
 
-  text-shadow: 3px 4px black;
+  text-shadow: 3px 4px $user-info-text-shadow-color;
 }
 
 .h3 {

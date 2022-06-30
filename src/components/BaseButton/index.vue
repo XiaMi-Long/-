@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 16:59:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:43:52
+ * @LastEditTime: 2022-06-29 11:08:33
 -->
 <template>
   <div class="base-button" @click="btnClick($event)">
@@ -51,11 +51,11 @@ export default {
 
   padding: 0.5em;
 
-  border: 1px solid white;
+  border: 1px solid $song-classify-text-color;
 
   min-width: 90px;
 
-  color: white;
+  color: $song-classify-text-color;
 
   margin: 1em;
 
@@ -65,9 +65,9 @@ export default {
 
   cursor: pointer;
   &:hover {
-    background-color: #0d0d0d;
+    background-color: $song-classify-background-color;
 
-    border: 1px solid #0d0d0d;
+    border: 1px solid $song-classify-hover-background-color;
 
     box-shadow: 0 0 5px;
   }

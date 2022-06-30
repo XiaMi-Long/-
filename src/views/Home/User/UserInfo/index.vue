@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-17 16:28:15
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 09:57:31
+ * @LastEditTime: 2022-06-22 17:45:28
 -->
 <template>
   <div class="user-box">
@@ -32,6 +32,7 @@
 
 <script>
 export default {
+  name: "UserInfoView",
   props: {
     info: {
       type: Object,

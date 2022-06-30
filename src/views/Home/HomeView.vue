@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-07 10:52:02
+ * @LastEditTime: 2022-06-29 17:23:27
 -->
 <!--
  * @Descripttion: 
@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import UserView from "./User/UserView.vue";
-import ChangeUserView from "./ChangeUser/ChangeUserView.vue";
-import SongClassifyView from "@/views/SongClassify/SongClassifyView.vue";
-import TableView from "@/views/Table/TableView.vue";
+import UserView from "./User/index.vue";
+import ChangeUserView from "./ChangeUser/index.vue";
+import SongClassifyView from "./SongClassify/index.vue";
+import TableView from "./Table/index.vue";
 
 import { onResizeQueue, getHashStringArgs } from "@/utils/BaseUtils";
 
@@ -167,12 +167,8 @@ export default {
 
 <style lang="scss" scoped>
 .box {
-  // background: url("@/assets/wallhaven-3.png") no-repeat;
-  // background-size: cover;
-
-  background-color: #272525;
-
-  opacity: 0.8;
+  background: url("@/assets/background.jpg") no-repeat;
+  background-size: cover;
 }
 
 .container {

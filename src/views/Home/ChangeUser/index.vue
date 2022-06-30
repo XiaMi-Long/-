@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 17:31:54
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-28 19:59:15
+ * @LastEditTime: 2022-06-30 16:52:56
 -->
 <template>
   <div class="change-user-container" @click="handleChangeUser">
@@ -77,7 +77,7 @@ export default {
 .change-user-container {
   position: fixed;
 
-  color: white;
+  color: $changer-user-text-color;
 
   top: 1em;
   left: 1em;
