@@ -4,20 +4,11 @@
  * @Author: wwy
  * @Date: 2022-05-17 15:03:26
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-29 11:03:05
+ * @LastEditTime: 2022-06-30 17:11:08
 -->
 <template>
   <div class="text">
     <h2 class="h2 animate__animated animate__zoomIn">{{ info.text1 }}</h2>
-    <h3 class="h3 animate__animated animate__zoomIn">
-      {{ info.text2 }}
-    </h3>
-    <hr class="hr animate__animated animate__zoomIn" />
-    <div class="introduce animate__animated animate__zoomIn">
-      <span>
-        {{ info.text3 }}
-      </span>
-    </div>
   </div>
 </template>
 

@@ -4,11 +4,11 @@
  * @Author: wwy
  * @Date: 2022-06-02 09:29:46
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-20 21:20:58
+ * @LastEditTime: 2022-06-30 21:21:12
 -->
 <template>
   <div class="round">
-    <img :src="photoUrl" alt="" class="img" />
+    <img :src="photoUrl" alt="" class="img" :style="imgStyle" />
   </div>
 </template>
 
@@ -21,6 +21,10 @@ export default {
       default: function () {
         return "";
       },
+    },
+    imgStyle: {
+      type: Object,
+      required: false,
     },
   },
   data() {
@@ -52,12 +56,12 @@ export default {
 @media screen and (max-width: 500px) {
   .round {
     .img {
-      width: 65px;
-      height: 65px;
+      width: 65px !important;
+      height: 65px !important;
     }
   }
 }
-// 小于500
+// 小于900
 @media screen and (max-width: 900px) {
   .round {
     line-height: 1;
@@ -66,12 +70,12 @@ export default {
     }
   }
 }
-// 小于500
+// 小于1100
 @media screen and (max-width: 1100px) {
   .round {
     .img {
-      width: 100px;
-      height: 100px;
+      width: 150px !important;
+      height: 150px !important;
     }
   }
 }

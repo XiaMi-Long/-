@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-22 17:43:17
+ * @LastEditTime: 2022-06-30 17:40:41
  */
 const { defineConfig } = require("@vue/cli-service");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
@@ -51,7 +51,7 @@ module.exports = defineConfig({
         splitChunks: {
           chunks: "all", //async异步代码分割 initial同步代码分割 all同步异步分割都开启
           // minChunks: 1,             //模块至少使用次数
-          maxInitialRequests: 5, //首页加载的时候引入的文件最多几个
+          maxInitialRequests: 3, //首页加载的时候引入的文件最多几个
           minSize: 20000, //字节 引入的文件大于kb才进行分割
           automaticNameDelimiter: "~", //缓存组和生成文件名称之间的连接符
           cacheGroups: {

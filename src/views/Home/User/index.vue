@@ -4,22 +4,25 @@
  * @Author: wwy
  * @Date: 2022-05-20 15:51:18
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-29 11:30:52
+ * @LastEditTime: 2022-06-30 21:02:48
 -->
 <template>
   <div class="user_container">
     <div class="user_left" v-if="leftShow">
       <!-- 用户头像 -->
-      <UserPhotoView :photoUrl="leftPhoto"></UserPhotoView>
+      <UserPhotoView
+        :photoUrl="leftPhoto"
+        :imgStyle="userImgStyle"
+      ></UserPhotoView>
 
       <!-- 用户简述 -->
       <UserIntroduceView :info="introduceUserA"></UserIntroduceView>
 
       <!-- 个人信息按钮 -->
-      <div class="mobile_button">
-        <!-- 个人介绍 -->
+      <!-- <div class="mobile_button">
+        个人介绍
         <div class="mobile_introduce" @click="handleLeftClick">个人介绍</div>
-        <!-- 去直播间 -->
+        去直播间
         <a
           :href="introduceUserA.bilibiliUrl"
           target="_blank"
@@ -27,24 +30,27 @@
         >
           <div class="mobile_introduce">去直播间</div>
         </a>
-        <!-- 我的歌单 -->
+        我的歌单
         <div class="mobile_introduce" @click="handleLeftSongSheetClick">
           我的歌单
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="user_right" v-if="rightShow">
       <!-- 用户头像 -->
-      <UserPhotoView :photoUrl="rightPhoto"></UserPhotoView>
+      <UserPhotoView
+        :photoUrl="rightPhoto"
+        :imgStyle="userImgStyle"
+      ></UserPhotoView>
 
       <!-- 用户简述 -->
       <UserIntroduceView :info="introduceUserB"></UserIntroduceView>
 
       <!-- 个人信息按钮 -->
-      <div class="mobile_button">
-        <!-- 个人介绍 -->
+      <!--       <div class="mobile_button">
+        个人介绍
         <div class="mobile_introduce" @click="handleRightClick">个人介绍</div>
-        <!-- 去直播间 -->
+        去直播间
         <a
           :href="introduceUserB.bilibiliUrl"
           target="_blank"
@@ -52,11 +58,11 @@
         >
           <div class="mobile_introduce">去直播间</div>
         </a>
-        <!-- 我的歌单 -->
+        我的歌单
         <div class="mobile_introduce" @click="handleRightSongSheetClick">
           我的歌单
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- 左边的弹窗 -->
@@ -115,6 +121,11 @@ export default {
   },
   data() {
     return {
+      userImgStyle: {
+        width: "200px",
+        height: "200px",
+      },
+
       leftPhoto: require("@/assets/sky.jpg"),
       rightPhoto: require("@/assets/preview.jpg"),
 

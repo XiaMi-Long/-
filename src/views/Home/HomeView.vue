@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-29 17:23:27
+ * @LastEditTime: 2022-06-30 21:22:26
 -->
 <!--
  * @Descripttion: 
@@ -19,26 +19,28 @@
     <div class="container">
       <header class="header">
         <main class="main">
+          <!-- logo -->
+          <LogoView></LogoView>
           <!-- 用户头像和个人介绍 -->
           <UserView></UserView>
         </main>
         <!-- 分类和搜索框 -->
-        <div class="classification">
+        <!-- <div class="classification">
           <SongClassifyView
             @change-song-type="handleChangeSongType"
             @change-input-search="handleInputSearch"
             @change-song-sheet="handleChangeSongSheet"
           ></SongClassifyView>
-        </div>
+        </div> -->
         <!-- 表格 -->
-        <div class="table">
+        <!-- <div class="table">
           <TableView :filterSong="getFilterSong"></TableView>
-        </div>
+        </div> -->
       </header>
     </div>
     <!-- 切换用户 -->
     <ChangeUserView
-      v-if="getRole !== 'All'"
+      v-if="!showAll"
       @change-user="changeUserCallBack"
     ></ChangeUserView>
 
@@ -48,19 +50,21 @@
 </template>
 
 <script>
+import LogoView from "./User/Logo/index.vue";
 import UserView from "./User/index.vue";
 import ChangeUserView from "./ChangeUser/index.vue";
-import SongClassifyView from "./SongClassify/index.vue";
-import TableView from "./Table/index.vue";
+// import SongClassifyView from "./SongClassify/index.vue";
+// import TableView from "./Table/index.vue";
 
 import { onResizeQueue, getHashStringArgs } from "@/utils/BaseUtils";
 
 export default {
   components: {
+    LogoView,
     UserView,
     ChangeUserView,
-    SongClassifyView,
-    TableView,
+    // SongClassifyView,
+    // TableView,
   },
 
   data() {
@@ -82,6 +86,15 @@ export default {
     },
     getSongType() {
       return this.$store.getters.getSongType;
+    },
+    showAll() {
+      return this.getRole === "All";
+    },
+    showA() {
+      return this.getRole === "A";
+    },
+    showB() {
+      return this.getRole === "B";
     },
     /* 过滤表格歌曲应该显示哪些 */
     getFilterSong() {
@@ -132,8 +145,9 @@ export default {
       } else if (window.innerWidth > 1000 && this.getRole !== "All") {
         this.$store.commit("setRole", "All");
 
-        if (!this.isFirstComparePcAndMobile)
+        if (!this.isFirstComparePcAndMobile) {
           this.isFirstComparePcAndMobile = true;
+        }
       }
     },
 
@@ -166,11 +180,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.box {
-  background: url("@/assets/background.jpg") no-repeat;
-  background-size: cover;
-}
-
 .container {
   width: 100%;
   height: 100%;
