@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-28 20:04:38
+ * @LastEditTime: 2022-06-29 17:23:27
 -->
 <!--
  * @Descripttion: 
@@ -169,10 +169,6 @@ export default {
 .box {
   background: url("@/assets/background.jpg") no-repeat;
   background-size: cover;
-
-  background-color: #272525;
-
-  opacity: 0.8;
 }
 
 .container {
