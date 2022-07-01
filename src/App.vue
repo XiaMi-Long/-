@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-01 15:07:46
+ * @LastEditTime: 2022-07-01 17:12:09
 -->
 <template>
   <div id="app">
@@ -14,8 +14,8 @@
 
 <style lang="scss">
 body {
-  // background: url("@/assets/background.jpg") no-repeat;
-  background-color: #343333;
+  background: url("@/assets/background.jpg") no-repeat;
+  // background-color: #343333;
   background-size: 100% 100%;
   background-attachment: fixed;
 }

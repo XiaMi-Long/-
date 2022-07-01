@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:37:05
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-01 15:49:25
+ * @LastEditTime: 2022-07-01 16:19:38
 -->
 <template>
   <div class="box">
@@ -30,14 +30,24 @@ export default {
     PageTwo,
   },
 
+  data() {
+    return {};
+  },
+
   computed: {
     getUrlRole() {
       return new URLSearchParams(window.location.search).get("role");
     },
   },
 
-  data() {
-    return {};
+  mounted() {
+    this.setRole();
+  },
+
+  methods: {
+    setRole() {
+      this.$store.commit("setRole", this.getUrlRole);
+    },
   },
 };
 </script>

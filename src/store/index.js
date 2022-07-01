@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-07 10:34:15
+ * @LastEditTime: 2022-07-01 16:18:02
  */
 import Vue from "vue";
 import Vuex from "vuex";
@@ -29,7 +29,6 @@ export default new Vuex.Store({
   },
   mutations: {
     setRole: (state, value) => {
-      window.location.hash = "role=" + value;
       state.role = value;
     },
 

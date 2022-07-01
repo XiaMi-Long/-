@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-02 11:07:04
+ * @LastEditTime: 2022-07-01 17:14:14
  */
 import Vue from "vue";
 import App from "./App.vue";
@@ -14,6 +14,7 @@ import store from "./store";
 import { Icon, Dialog, Input, Drawer, Notification, Backtop } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
+// import "./style/index.scss";
 import "./style/normalize.css";
 import "./style/font.css";
 import "animate.css";
