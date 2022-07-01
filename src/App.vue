@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:29:53
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-30 21:08:36
+ * @LastEditTime: 2022-07-01 13:35:43
 -->
 <template>
   <div id="app">
@@ -33,9 +33,6 @@
   ::-moz-selection {
     background: #409eff;
   }
-
-  background: url("@/assets/background.jpg") no-repeat;
-  background-size: cover;
 }
 
 // html {

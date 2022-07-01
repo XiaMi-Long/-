@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-20 15:51:18
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-30 21:02:48
+ * @LastEditTime: 2022-07-01 13:28:31
 -->
 <template>
   <div class="user_container">
@@ -19,10 +19,10 @@
       <UserIntroduceView :info="introduceUserA"></UserIntroduceView>
 
       <!-- 个人信息按钮 -->
-      <!-- <div class="mobile_button">
-        个人介绍
+      <div class="mobile_button">
+        <!-- 个人介绍 -->
         <div class="mobile_introduce" @click="handleLeftClick">个人介绍</div>
-        去直播间
+        <!-- 去直播间 -->
         <a
           :href="introduceUserA.bilibiliUrl"
           target="_blank"
@@ -30,11 +30,11 @@
         >
           <div class="mobile_introduce">去直播间</div>
         </a>
-        我的歌单
+        <!-- 我的歌单 -->
         <div class="mobile_introduce" @click="handleLeftSongSheetClick">
           我的歌单
         </div>
-      </div> -->
+      </div>
     </div>
     <div class="user_right" v-if="rightShow">
       <!-- 用户头像 -->
@@ -47,10 +47,10 @@
       <UserIntroduceView :info="introduceUserB"></UserIntroduceView>
 
       <!-- 个人信息按钮 -->
-      <!--       <div class="mobile_button">
-        个人介绍
+      <div class="mobile_button">
+        <!-- 个人介绍 -->
         <div class="mobile_introduce" @click="handleRightClick">个人介绍</div>
-        去直播间
+        <!-- 去直播间 -->
         <a
           :href="introduceUserB.bilibiliUrl"
           target="_blank"
@@ -58,11 +58,11 @@
         >
           <div class="mobile_introduce">去直播间</div>
         </a>
-        我的歌单
+        <!-- 我的歌单 -->
         <div class="mobile_introduce" @click="handleRightSongSheetClick">
           我的歌单
         </div>
-      </div> -->
+      </div>
     </div>
 
     <!-- 左边的弹窗 -->
