@@ -4,19 +4,42 @@
  * @Author: wwy
  * @Date: 2022-07-01 15:54:45
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-01 17:50:37
+ * @LastEditTime: 2022-07-04 22:46:37
 -->
 <template>
   <div class="introduce-view">
     <div class="introduce-view-top-box">
-      <h3 class="introduce-view-top-text">我的自我介绍</h3>
+      <h3 class="introduce-view-top-text">{{ info.userName }}的自我介绍</h3>
     </div>
-    <div class="introduce-view-box" v-for="(item, index) of 2" :key="index">
+    <div
+      class="introduce-view-box"
+      v-for="(item, index) of info.introduce"
+      :key="index"
+    >
       <img src="@/assets/卡通形象.png" alt="美女" class="introduce-view-img" />
       <div class="introduce-view-text">
-        {{ info.introduce[index] }}
+        {{ item }}
       </div>
     </div>
+    <div class="introduce-view-dialog-btn-box">
+      <div class="btn" @click="mobileOpenDialog">查看立绘</div>
+    </div>
+    <div class="introduce-view-tag-box" v-if="info.introduceTabel">
+      <span class="tag">种族：{{ info.introduceTabel.race }}</span>
+      <span class="tag">外貌：{{ info.introduceTabel.appearance }}</span>
+      <span class="tag">生日：{{ info.introduceTabel.birthday }}</span>
+      <span class="tag">应援色：{{ info.introduceTabel.color }}</span>
+      <span class="tag" v-if="info.introduceTabel.address"
+        >属地：{{ info.introduceTabel.address }}</span
+      >
+      <span class="tag" v-if="info.introduceTabel.occupation"
+        >职业：{{ info.introduceTabel.occupation }}</span
+      >
+      <span class="tag">身高：{{ info.introduceTabel.height }}</span>
+      <span class="tag">年龄：{{ info.introduceTabel.age }}</span>
+      <span class="tag">出道日：{{ info.introduceTabel.startDay }}</span>
+    </div>
+
     <div class="introduce-view-btn-box">
       <a :href="info.bilibiliUrl" v-if="info.bilibiliUrl" target="_blank">
         <img
@@ -58,16 +81,30 @@
         <img src="@/assets/qqmusic.png" alt="QQ音乐" class="img" title="QQ音乐"
       /></a>
     </div>
+
+    <!-- 立绘弹窗 -->
+    <PhotoDialogView
+      :openDrawer="openDrawer"
+      @drawer-close="handleDrawerClose"
+    ></PhotoDialogView>
   </div>
 </template>
 
 <script>
+import PhotoDialogView from "./Dialog/index.vue";
+
 export default {
   name: "IntroduceView",
+
+  components: {
+    PhotoDialogView,
+  },
 
   data() {
     return {
       info: {},
+      /* 是否打开立绘弹窗 */
+      openDrawer: false,
     };
   },
 
@@ -83,9 +120,20 @@ export default {
     });
   },
   methods: {
+    /* 初始化赋值 */
     getInfo() {
       this.info = window._user[this.getRole];
       console.log(this.info);
+    },
+
+    /* 打开立绘弹窗 */
+    mobileOpenDialog() {
+      this.openDrawer = true;
+    },
+
+    /* 关闭立绘弹窗 */
+    handleDrawerClose() {
+      this.openDrawer = false;
     },
   },
 };
@@ -97,11 +145,10 @@ export default {
 
   opacity: 0.8;
 
-  height: 400px;
+  width: 50%;
+  height: 100%;
 
   background-color: white;
-
-  box-shadow: 0px -1px 8px 0px #020202;
 
   border-radius: 6px;
 
@@ -110,6 +157,8 @@ export default {
   text-indent: 1em;
 
   padding: 20px 10px;
+
+  overflow: auto;
 
   &-box {
     display: flex;
@@ -150,6 +199,77 @@ export default {
   }
 }
 
+.introduce-view-dialog-btn-box {
+  display: none;
+
+  .btn {
+    display: block;
+
+    line-height: 1em;
+
+    text-align: center;
+
+    border: 1px solid #909399;
+
+    border-radius: 4px;
+
+    padding: 8px 16px;
+
+    margin-left: 16px;
+
+    color: #5d5e61;
+
+    cursor: pointer;
+
+    &:hover {
+      border-color: #6bbeea;
+
+      background-color: #6bbeea;
+
+      color: white;
+
+      filter: brightness(1.05);
+    }
+
+    &:active {
+      border-color: #6bbeea;
+
+      background-color: #6bbeea;
+
+      color: white;
+
+      filter: brightness(0.95);
+    }
+  }
+}
+
+.introduce-view-tag-box {
+  margin: 2em 0;
+  .tag {
+    display: block;
+
+    line-height: 1em;
+
+    text-align: center;
+
+    border: 1px solid #909399;
+
+    border-radius: 4px;
+
+    padding: 8px 16px;
+
+    margin-left: 16px;
+
+    color: #5d5e61;
+
+    transition: color 0.4s;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
 .introduce-view-btn-box {
   text-align: right;
   .img {
@@ -157,6 +277,17 @@ export default {
     height: 32px;
 
     margin: 0 10px;
+  }
+}
+
+// 宽度小于800
+@media screen and (max-width: 800px) {
+  .introduce-view {
+    width: 100%;
+  }
+
+  .introduce-view-dialog-btn-box {
+    display: block;
   }
 }
 

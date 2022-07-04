@@ -4,13 +4,16 @@
  * @Author: wwy
  * @Date: 2022-07-01 15:48:35
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-01 17:51:05
+ * @LastEditTime: 2022-07-04 22:03:55
 -->
 <template>
   <div class="page-two-container">
     <div class="page-two-box">
       <div class="page-two-introduce">
+        <!-- 自我介绍 -->
         <IntroduceView></IntroduceView>
+        <!-- 立绘 -->
+        <PhotoView></PhotoView>
       </div>
     </div>
   </div>
@@ -18,12 +21,14 @@
 
 <script>
 import IntroduceView from "./Introduce/index.vue";
+import PhotoView from "./Photo/index.vue";
 
 export default {
   name: "PageTwo",
 
   components: {
     IntroduceView,
+    PhotoView,
   },
 };
 </script>
@@ -49,7 +54,10 @@ export default {
   }
 
   &-introduce {
-    width: 60%;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
   }
 }
 

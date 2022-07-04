@@ -4,11 +4,11 @@
  * @Author: wwy
  * @Date: 2022-06-30 21:12:57
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-01 15:23:37
+ * @LastEditTime: 2022-07-04 21:17:39
 -->
 <template>
-  <div>
-    <p class="logo">LOGO</p>
+  <div class="logo-container">
+    <img class="logo" src="@/assets/logo.png" />
   </div>
 </template>
 
@@ -19,16 +19,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.logo-container {
+  height: 35%;
+}
+
 .logo {
-  color: white;
-
-  padding: 40px;
-
-  font: {
-    size: 40px;
-    weight: bold;
-  }
-  font-style: italic;
 }
 
 // 小于1200

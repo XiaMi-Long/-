@@ -4,20 +4,34 @@
  * @Author: wwy
  * @Date: 2022-05-06 09:35:36
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-01 17:30:39
+ * @LastEditTime: 2022-07-04 22:34:41
  */
 window._user = {
   A: {
     userName: "祈临Rinn",
-    photo: "",
     text1: "麒麟座星灵——祈临Rinn",
-    text2: "寻找向日葵气味的武士",
-    text3: "永远的Jazz Hiphop",
-    text4: "去洛琪希神教",
     introduce: [
       `麒麟座星灵——祈临Rinn，在寻找未知魔法波动时，不小心掉落在时空裂隙中，几经辗转才到达地球。目前作为个人势虚拟主播活动中。是个歌势，直播时间一般是早八晚八，咕咕会提前请假。`,
       `唱歌为主，晚上偶尔会掉落游戏回（坐大牢）。具体时间和安排请看B站动态最新的周计划哦！`,
     ],
+    introduceTabel: {
+      // 种族
+      race: "星灵",
+      //  外貌
+      appearance: "奶奶灰卷发&宝蓝色眼睛",
+      // 生日
+      birthday: "11月19日",
+      // 应援色
+      color: "宇宙拿铁(Cosmic Latte)",
+      // 属地
+      address: "星灵界",
+      // 身高
+      height: "163cm",
+      // 年龄
+      age: "未知",
+      // 出道日
+      startDay: "2022年7月30日",
+    },
     fanBaseNumber: "1007364150",
     email: "908832204@qq.com",
     bilibiliUrl: "https://space.bilibili.com/21864830",
@@ -30,16 +44,29 @@ window._user = {
   },
   B: {
     userName: "灼晚Yoru",
-    photo: "",
     text1: "努力适应人类社会的190岁小蔷薇花精",
-    text2: "起风了!",
-    text3:
-      "隐约雷鸣，阴霾天空，但盼风雨来，能留君在此。隐约雷鸣，阴霾天空，即使天无雨，吾亦留在此",
-    text4: "返回神圣之地",
     introduce: [
       `努力适应人类社会的190岁小蔷薇花精（相当于人类19岁）。目前作为个人势虚拟主播活动中。`,
       `主杂谈，直播时间晚八到十。`,
     ],
+    introduceTabel: {
+      // 种族
+      race: "星灵",
+      //  外貌
+      appearance: "奶奶灰卷发&宝蓝色眼睛",
+      // 生日
+      birthday: "11月19日",
+      // 应援色
+      color: "宇宙拿铁(Cosmic Latte)",
+      // 职业
+      occupation: "花界舞者",
+      // 身高
+      height: "163cm",
+      // 年龄
+      age: "未知",
+      // 出道日
+      startDay: "2022年7月30日",
+    },
     fanBaseNumber: "623519472",
     email: "841852387@qq.com",
     bilibiliUrl: "https://space.bilibili.com/5683525",
