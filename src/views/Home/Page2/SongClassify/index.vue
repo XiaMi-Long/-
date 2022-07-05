@@ -4,15 +4,11 @@
  * @Author: wwy
  * @Date: 2022-05-19 17:00:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-29 11:12:39
+ * @LastEditTime: 2022-07-05 14:45:37
 -->
 <template>
   <div class="classification-container">
     <div class="song-classification">
-      <!-- 标题 -->
-      <div class="song-title">
-        <p>当前是 {{ filterUserName }} 的歌单</p>
-      </div>
       <!-- 搜索框 -->
       <div class="song-search">
         <SongSearchPcView @input-search="handleInputSearch"></SongSearchPcView>
@@ -51,30 +47,17 @@ export default {
   },
 
   computed: {
-    getSongType() {
-      return this.$store.getters.getSongType;
+    getRole() {
+      return this.$store.getters.getRole;
     },
-
     filterSongList() {
-      const typeValue = this.getSongType;
       return this.songList.filter((item) =>
-        window._user[typeValue].hasType.includes(item.id)
+        window._user[this.getRole].hasType.includes(item.id)
       );
     },
-
-    filterUserName() {
-      return window._user[this.getSongType].userName;
-    },
   },
 
-  watch: {
-    getSongType() {
-      /* 如果切换歌单,清除按钮focus效果 */
-      this.HandleBaseButtonClick("");
-      /* 切换歌单的回调 */
-      this.$emit("change-song-sheet");
-    },
-  },
+  watch: {},
 
   methods: {
     HandleBaseButtonClick(text) {

@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-07-01 15:48:35
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-05 14:31:51
+ * @LastEditTime: 2022-07-05 14:35:54
 -->
 <template>
   <div class="page-two-container">
@@ -19,6 +19,10 @@
         <!-- 搜索框和分类 -->
         <SongClassifyView></SongClassifyView>
       </div>
+      <div class="page-two-tab">
+        <!-- 歌曲表格 -->
+        <TableView></TableView>
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +31,7 @@
 import IntroduceView from "./Introduce/index.vue";
 import PhotoView from "./Photo/index.vue";
 import SongClassifyView from "./SongClassify/index.vue";
+import TableView from "./Table/index.vue";
 
 export default {
   name: "PageTwo",
@@ -35,6 +40,7 @@ export default {
     IntroduceView,
     PhotoView,
     SongClassifyView,
+    TableView,
   },
 };
 </script>
