@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-06-30 21:12:57
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-04 21:17:39
+ * @LastEditTime: 2022-07-05 15:22:08
 -->
 <template>
   <div class="logo-container">
@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 .logo-container {
-  height: 35%;
+  height: 20%;
 }
 
 .logo {

@@ -4,13 +4,15 @@
  * @Author: wwy
  * @Date: 2022-07-01 14:54:14
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-01 15:12:50
+ * @LastEditTime: 2022-07-05 15:20:04
 -->
 <template>
   <div class="page-one-container">
     <div class="page-one-box">
       <!-- LOGO -->
       <LogoView></LogoView>
+      <!-- TEXT -->
+      <TextView></TextView>
       <!-- Img -->
       <PhotoView></PhotoView>
     </div>
@@ -20,6 +22,7 @@
 <script>
 import LogoView from "./Logo/index.vue";
 import PhotoView from "./Photo/index.vue";
+import TextView from "./Text/index.vue";
 
 export default {
   name: "PageOne",
@@ -27,6 +30,7 @@ export default {
   components: {
     LogoView,
     PhotoView,
+    TextView,
   },
 };
 </script>
