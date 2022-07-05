@@ -4,12 +4,13 @@
  * @Author: wwy
  * @Date: 2022-07-01 15:48:35
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-05 14:53:44
+ * @LastEditTime: 2022-07-05 15:14:56
 -->
 <template>
   <div class="page-two-container">
     <div class="page-two-box">
       <div class="page-two-introduce">
+        <MobilePhotoView></MobilePhotoView>
         <!-- 自我介绍 -->
         <IntroduceView></IntroduceView>
         <!-- 立绘 -->
@@ -35,6 +36,7 @@ import IntroduceView from "./Introduce/index.vue";
 import PhotoView from "./Photo/index.vue";
 import SongClassifyView from "./SongClassify/index.vue";
 import TableView from "./Table/index.vue";
+import MobilePhotoView from "./MobileStyle/Photo/index.vue";
 
 export default {
   name: "PageTwo",
@@ -44,6 +46,7 @@ export default {
     PhotoView,
     SongClassifyView,
     TableView,
+    MobilePhotoView,
   },
 
   data() {
@@ -111,7 +114,7 @@ export default {
 
   &-box {
     width: 100%;
-    height: 600px;
+    height: 680px;
 
     margin-top: 2%;
   }
@@ -126,10 +129,23 @@ export default {
   }
 }
 
+// 宽度小于800
+@media screen and (max-width: 800px) {
+  .page-two-introduce {
+    flex-direction: column;
+  }
+
+  .page-two-box {
+    height: auto;
+  }
+}
+
 // 宽度小于700
 @media screen and (max-width: 700px) {
   .page-two-introduce {
     width: 100%;
+
+    flex-direction: column;
   }
 }
 </style>

@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-07-04 22:38:29
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-04 22:54:05
+ * @LastEditTime: 2022-07-05 15:09:49
 -->
 <template>
   <div>
@@ -62,14 +62,14 @@ export default {
   width: 100%;
   height: 100%;
 
-  background: url("@/assets/A-lihui.png") no-repeat;
+  background: url("@/assets/A-lihui.png") no-repeat 50%;
   background-size: contain;
 }
 .B-photo {
   width: 100%;
   height: 100%;
 
-  background: url("@/assets/B-lihui.png") no-repeat;
+  background: url("@/assets/B-lihui.png") no-repeat 50%;
   background-size: contain;
 }
 </style>
