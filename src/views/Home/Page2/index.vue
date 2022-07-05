@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-07-01 15:48:35
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-05 14:35:54
+ * @LastEditTime: 2022-07-05 14:53:44
 -->
 <template>
   <div class="page-two-container">
@@ -17,11 +17,14 @@
       </div>
       <div class="page-two-input">
         <!-- 搜索框和分类 -->
-        <SongClassifyView></SongClassifyView>
+        <SongClassifyView
+          @change-input-search="handleInputSearch"
+          @change-song-type="handleChangeSongType"
+        ></SongClassifyView>
       </div>
       <div class="page-two-tab">
         <!-- 歌曲表格 -->
-        <TableView></TableView>
+        <TableView :filterSong="getFilterSong"></TableView>
       </div>
     </div>
   </div>
@@ -41,6 +44,56 @@ export default {
     PhotoView,
     SongClassifyView,
     TableView,
+  },
+
+  data() {
+    return {
+      /* 歌曲过滤所需的参数对象 */
+      songFilterObject: {
+        songType: "",
+        searchWord: "",
+      },
+    };
+  },
+
+  computed: {
+    getRole() {
+      return this.$store.getters.getRole;
+    },
+    /* 过滤表格歌曲应该显示哪些 */
+    getFilterSong() {
+      return window._song[this.getRole].filter(
+        (item) =>
+          item.type.join("-").includes(this.songFilterObject.songType) &&
+          (item.songName
+            .toLocaleLowerCase()
+            .includes(this.songFilterObject.searchWord.toLocaleLowerCase()) ||
+            item.user
+              .toLocaleLowerCase()
+              .includes(this.songFilterObject.searchWord.toLocaleLowerCase()) ||
+            item.language
+              .toLocaleLowerCase()
+              .includes(this.songFilterObject.searchWord.toLocaleLowerCase()) ||
+            item.remarks
+              .toLocaleLowerCase()
+              .includes(this.songFilterObject.searchWord.toLocaleLowerCase()))
+      );
+    },
+  },
+
+  methods: {
+    /* 歌曲分类更改的回调 */
+    handleChangeSongType(value) {
+      /* 如果选中的被取消了,就查询全部 */
+      if (value.length === 0) {
+        value.push({ id: "" });
+      }
+      this.songFilterObject.songType = value[0].id;
+    },
+    /* 搜索框搜索的回调 */
+    handleInputSearch(value) {
+      this.songFilterObject.searchWord = value;
+    },
   },
 };
 </script>

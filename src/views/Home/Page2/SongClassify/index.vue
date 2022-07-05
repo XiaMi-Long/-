@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 17:00:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-05 14:45:37
+ * @LastEditTime: 2022-07-05 14:57:58
 -->
 <template>
   <div class="classification-container">
@@ -108,6 +108,8 @@ export default {
       border: 1px solid $song-classify-hover-background-color;
 
       box-shadow: 0 0 5px;
+
+      color: white;
     }
 
     .song-search {

@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-05-19 16:59:01
  * @LastEditors: wwy
- * @LastEditTime: 2022-06-29 11:08:33
+ * @LastEditTime: 2022-07-05 14:59:09
 -->
 <template>
   <div class="base-button" @click="btnClick($event)">
@@ -70,6 +70,8 @@ export default {
     border: 1px solid $song-classify-hover-background-color;
 
     box-shadow: 0 0 5px;
+
+    color: white;
   }
 }
 </style>
