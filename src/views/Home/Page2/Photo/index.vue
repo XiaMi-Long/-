@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-07-04 22:00:12
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-04 22:54:19
+ * @LastEditTime: 2022-07-05 14:23:12
 -->
 <template>
   <div class="background-box">
@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .background-box {
   width: 50%;
-  height: calc(100% + 40px);
+  height: 100%;
 
   .background-box-A-photo {
     width: 100%;

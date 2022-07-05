@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-07-01 15:54:45
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-04 22:46:37
+ * @LastEditTime: 2022-07-05 14:30:53
 -->
 <template>
   <div class="introduce-view">
@@ -159,6 +159,8 @@ export default {
   padding: 20px 10px;
 
   overflow: auto;
+
+  box-sizing: border-box;
 
   &-box {
     display: flex;

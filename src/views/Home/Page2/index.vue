@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-07-01 15:48:35
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-04 22:03:55
+ * @LastEditTime: 2022-07-05 14:31:51
 -->
 <template>
   <div class="page-two-container">
@@ -15,6 +15,10 @@
         <!-- 立绘 -->
         <PhotoView></PhotoView>
       </div>
+      <div class="page-two-input">
+        <!-- 搜索框和分类 -->
+        <SongClassifyView></SongClassifyView>
+      </div>
     </div>
   </div>
 </template>
@@ -22,6 +26,7 @@
 <script>
 import IntroduceView from "./Introduce/index.vue";
 import PhotoView from "./Photo/index.vue";
+import SongClassifyView from "./SongClassify/index.vue";
 
 export default {
   name: "PageTwo",
@@ -29,6 +34,7 @@ export default {
   components: {
     IntroduceView,
     PhotoView,
+    SongClassifyView,
   },
 };
 </script>
@@ -48,8 +54,6 @@ export default {
     width: 100%;
     height: 600px;
 
-    border: 1px solid white;
-
     margin-top: 2%;
   }
 
@@ -58,6 +62,8 @@ export default {
 
     width: 100%;
     height: 100%;
+
+    margin-bottom: 3em;
   }
 }
 
