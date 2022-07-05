@@ -4,7 +4,7 @@
  * @Author: wwy
  * @Date: 2022-07-01 14:54:14
  * @LastEditors: wwy
- * @LastEditTime: 2022-07-05 15:20:04
+ * @LastEditTime: 2022-07-05 15:51:34
 -->
 <template>
   <div class="page-one-container">
@@ -49,8 +49,6 @@ export default {
   &-box {
     width: 100%;
     height: 600px;
-
-    border: 1px solid white;
 
     margin-top: 2%;
   }
